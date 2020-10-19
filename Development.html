@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta charset="utf-8"/>
+<title>Development — nbsite 0.6.8a32 documentation</title>
+<meta content="Build a tested, sphinx-based website from notebooks." name="description"/>
+<meta content="PyViz Developers" name="author"/>
+<!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+    WebFont.load({
+      google: {
+        families: ['Source Sans Pro']
+      }
+    });
+  </script>
+<!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="_static/css/main.css" rel="stylesheet"/>
+<link href="_static/nbsite.css" rel="stylesheet"/>
+<link href="_static/site.css" rel="stylesheet"/>
+<!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+</script>
+<script src="_static/js/main.js"></script>
+<script src="_static/nbsite.js"></script>
+<script src="_static/require.js"></script>
+<!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="_static/favicon.ico" rel="icon" type="image/png"/>
+<!-- Canonical
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="/Development.html" rel="canonical">
+</link></head>
+<body class="">
+<header class="navigation">
+<div class="wrapper">
+<a class="logo" href="index.html">
+<img alt="Logo" src="_static/nbsite-logo.png"/>
+</a>
+<a class="navigation-menu logo-text" href="index.html">nbsite</a>
+<a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">Menu</a>
+<nav>
+<ul class="navigation-menu show" id="js-navigation-menu">
+<li class="nav-link doc-head"><a href="Usage.html">Usage</a></li>
+<li class="nav-link doc-head"><a href="gallery.html">Gallery</a></li>
+<li class="nav-link doc-head"><a href="#">Development</a></li>
+<li class="nav-link doc-head"><a href="about.html">About</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+<div class="docs section">
+<div id="hacketyhackhack"> <!-- style="width:20%;margin-right: 100px;"> --> <!--style="display: none;"> style="display:none;"> -->
+<div class="toc" style="width:15%; margin-right:20px;">
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">FAQ</a></li>
+</ul>
+</div>
+</div>
+<div class="content"> <!-- style="max-width:80%;margin-left:auto;margin-right: auto;">-->
+<div class="section" id="development">
+<h1>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h1>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="dev-install-nbsite">dev install nbsite<a class="anchor-link" href="#dev-install-nbsite">¶</a></h2><p><code>pip install -e .</code></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="build-nbsite-nbsite">build nbsite nbsite<a class="anchor-link" href="#build-nbsite-nbsite">¶</a></h2><p>(todo, see travis for commands to run locally)</p>
+<p>Update nbsite.pyviz.org: <code>git tag -a x.y.z -m "message" &amp;&amp; git push --tags</code></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="make-pypi-release">make pypi release<a class="anchor-link" href="#make-pypi-release">¶</a></h2><p><code>git tag -a x.y.z -m "message" &amp;&amp; git push --tags</code></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="the-bits">the bits<a class="anchor-link" href="#the-bits">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="shared_conf.py">shared_conf.py<a class="anchor-link" href="#shared_conf.py">¶</a></h3><p>Something</p>
+<h3 id="fix_links.py">fix_links.py<a class="anchor-link" href="#fix_links.py">¶</a></h3><p>something</p>
+<h3 id="gallery.py">gallery.py<a class="anchor-link" href="#gallery.py">¶</a></h3><p>something</p>
+<h3 id="thumbnailer.py">thumbnailer.py<a class="anchor-link" href="#thumbnailer.py">¶</a></h3><p>Something</p>
+<h3 id="nbbuild.py">nbbuild.py<a class="anchor-link" href="#nbbuild.py">¶</a></h3><p>something</p>
+<h3 id="nbpagebuild.py">nbpagebuild.py<a class="anchor-link" href="#nbpagebuild.py">¶</a></h3><p>Generates rst containers for all notebooks in examples/</p>
+<h3 id="generate_modules.py">generate_modules.py<a class="anchor-link" href="#generate_modules.py">¶</a></h3><p>something</p>
+<h3 id="paramdoc.py">paramdoc.py<a class="anchor-link" href="#paramdoc.py">¶</a></h3><p>The ioam-builder docextensions branch provides extensions for Sphinx
+to document Parameterized classes and generate autodocs for the
+modules and submodules in each project.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils"/>
+<p><a class="reference external" href="https://raw.githubusercontent.com/pyviz-dev/nbsite/master/examples/Development.ipynb">Right click to download this notebook from GitHub.</a></p>
+</div>
+</div>
+</div>
+<!-- END MAIN BODY OF DOCS ––––––––––––– -->
+<footer class="footer">
+<div class="footer-links">
+<ul>
+<li><span class="footer-title">Links</span></li>
+<li><a href="Usage.html">Usage</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="#">Development</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+<ul>
+<li><span class="footer-title">Join Us</span></li>
+<li><a href="https://github.com/pyviz-dev/nbsite">Github</a></li>
+<li><a href="https://gitter.im/pyviz/pyviz">Gitter</a></li>
+</ul>
+<ul class="copyright">
+<li>2018-2019 PyViz Developers</li>
+</ul>
+</div>
+</footer>
+<!-- Google Analytics -->
+<!-- MathJax Config -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

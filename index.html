@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta charset="utf-8"/>
+<title>nbsite — nbsite 0.6.8a32 documentation</title>
+<meta content="Build a tested, sphinx-based website from notebooks." name="description"/>
+<meta content="PyViz Developers" name="author"/>
+<!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+    WebFont.load({
+      google: {
+        families: ['Source Sans Pro']
+      }
+    });
+  </script>
+<!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="_static/css/main.css" rel="stylesheet"/>
+<link href="_static/nbsite.css" rel="stylesheet"/>
+<link href="_static/site.css" rel="stylesheet"/>
+<!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+</script>
+<script src="_static/js/main.js"></script>
+<script src="_static/nbsite.js"></script>
+<script src="_static/require.js"></script>
+<!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="_static/favicon.ico" rel="icon" type="image/png"/>
+<!-- Canonical
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="/index.html" rel="canonical">
+</link></head>
+<body class="">
+<header class="navigation">
+<div class="wrapper">
+<a class="logo" href="#">
+<img alt="Logo" src="_static/nbsite-logo.png"/>
+</a>
+<a class="navigation-menu logo-text" href="#">nbsite</a>
+<a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">Menu</a>
+<nav>
+<ul class="navigation-menu show" id="js-navigation-menu">
+<li class="nav-link doc-head"><a href="Usage.html">Usage</a></li>
+<li class="nav-link doc-head"><a href="gallery.html">Gallery</a></li>
+<li class="nav-link doc-head"><a href="Development.html">Development</a></li>
+<li class="nav-link doc-head"><a href="about.html">About</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+<div class="docs section">
+<div id="hacketyhackhack"> <!-- style="width:20%;margin-right: 100px;"> --> <!--style="display: none;"> style="display:none;"> -->
+<div class="toc" style="width:15%; margin-right:20px;">
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Development.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">FAQ</a></li>
+</ul>
+</div>
+</div>
+<div class="content"> <!-- style="max-width:80%;margin-left:auto;margin-right: auto;">-->
+<div class="section" id="nbsite">
+<h1>nbsite<a class="headerlink" href="#nbsite" title="Permalink to this headline">¶</a></h1>
+<p><strong>Build a tested, sphinx-based website from notebooks</strong></p>
+<p>Nbsite lets you build a website from a set of notebooks plus a minimal
+amount of config. Sites built with nbsite include
+<a class="reference external" href="https://pyviz.org/">pyviz.org</a>,
+<a class="reference external" href="http://datashader.org/">datashader.org</a>, and <a class="reference external" href="https://hvplot.pyviz.org/">hvplot.pyviz.org</a>.</p>
+<p>The idea behind nbsite is that notebooks can simultaneously be
+documentation (things you want to tell people about), examples (a
+starting point for people to run and use themselves), and test cases.</p>
+<p>To get started using nbsite, please see <a class="reference external" href="getting_started.html">Getting Started</a>. However, please note that this is a pre-release
+version of nbsite. If you use nbsite, you may subsequently have to
+change your config on upgrading to a newer version of nbsite. You will
+likely encounter limitations and
+problems. However, please file issues or ask questions on <a class="reference external" href="https://github.com/pyviz/nbsite/issues">GitHub</a>.</p>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>Many of the websites in the pyviz ecosystem are built using nbsite.
+These include:</p>
+<blockquote>
+<div><div id="iframe-container" style="height: 800px; width: 2000px;">
+<iframe height="500px" src="https://holoviews.org" width="900px"></iframe>
+<iframe height="500px" src="https://pyviz.org" width="900px"></iframe>
+<iframe height="500px" src="https://holoviz.org" width="900px"></iframe>
+<iframe height="500px" src="https://datashader.org" width="900px"></iframe>
+<iframe height="500px" src="https://hvplot.pyviz.org" width="900px"></iframe>
+<iframe height="500px" src="https://panel.pyviz.org" width="900px"></iframe>
+<iframe height="500px" src="https://colorcet.pyviz.org" width="900px"></iframe>
+<iframe height="500px" src="https://examples.pyviz.org" width="900px"></iframe>
+</div></div></blockquote>
+</div>
+<div class="section" id="when-to-use-nbsite">
+<span id="when-to-use"></span><h2>When to use nbsite<a class="headerlink" href="#when-to-use-nbsite" title="Permalink to this headline">¶</a></h2>
+<p>Nbsite is recommended for users who want to generate a static site from
+content in notebooks. It is especially useful if those notebooks contain
+bokeh plots.</p>
+</div>
+<div class="section" id="when-not-to-use-nbsite">
+<span id="when-not-to-use"></span><h2>When not to use nbsite<a class="headerlink" href="#when-not-to-use-nbsite" title="Permalink to this headline">¶</a></h2>
+<p>Nbsite is not recommended if you don’t mind writing rst, don’t have bokeh
+plots or are primarily interested in live notebooks. There are other projects
+to consider instead if that is your case:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>static site generators with support for notebooks: nikola,
+pelican, jupytersite, hugo, (whatever
+<a class="reference external" href="https://seaborn.pydata.org/tutorial/color_palettes.html">seaborn</a> uses),
+(whatever scikit-learn uses), (wahtever scikit-image uses), …</p></li>
+<li><p>notebook hosting plus viewing: github+nbviewer
+(<a class="reference external" href="https://nbviewer.jupyter.org/github/pyviz/pyviz/blob/master/notebooks/00-welcome.ipynb">example</a>),
+anaconda.org
+(<a class="reference external" href="https://anaconda.org/cball/ioam-paramnb-index/notebook">example</a>);
+…</p></li>
+<li><p>live notebook hosting: mybinder
+(<a class="reference external" href="https://mybinder.org/v2/gh/pyviz/pyviz/master?filepath=notebooks%2F12-parameters-and-widgets.ipynb">example</a>);
+…?</p></li>
+</ul>
+</div></blockquote>
+<div class="toctree-wrapper compound" id="id3">
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- END MAIN BODY OF DOCS ––––––––––––– -->
+<footer class="footer">
+<div class="footer-links">
+<ul>
+<li><span class="footer-title">Links</span></li>
+<li><a href="Usage.html">Usage</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="Development.html">Development</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+<ul>
+<li><span class="footer-title">Join Us</span></li>
+<li><a href="https://github.com/pyviz-dev/nbsite">Github</a></li>
+<li><a href="https://gitter.im/pyviz/pyviz">Gitter</a></li>
+</ul>
+<ul class="copyright">
+<li>2018-2019 PyViz Developers</li>
+</ul>
+</div>
+</footer>
+<!-- Google Analytics -->
+<!-- MathJax Config -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

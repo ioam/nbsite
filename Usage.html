@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta charset="utf-8"/>
+<title>Usage — nbsite 0.6.8a32 documentation</title>
+<meta content="Build a tested, sphinx-based website from notebooks." name="description"/>
+<meta content="PyViz Developers" name="author"/>
+<!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+    WebFont.load({
+      google: {
+        families: ['Source Sans Pro']
+      }
+    });
+  </script>
+<!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="_static/css/main.css" rel="stylesheet"/>
+<link href="_static/nbsite.css" rel="stylesheet"/>
+<link href="_static/site.css" rel="stylesheet"/>
+<!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+</script>
+<script src="_static/js/main.js"></script>
+<script src="_static/nbsite.js"></script>
+<script src="_static/require.js"></script>
+<!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="_static/favicon.ico" rel="icon" type="image/png"/>
+<!-- Canonical
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="/Usage.html" rel="canonical">
+</link></head>
+<body class="">
+<header class="navigation">
+<div class="wrapper">
+<a class="logo" href="index.html">
+<img alt="Logo" src="_static/nbsite-logo.png"/>
+</a>
+<a class="navigation-menu logo-text" href="index.html">nbsite</a>
+<a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">Menu</a>
+<nav>
+<ul class="navigation-menu show" id="js-navigation-menu">
+<li class="nav-link doc-head"><a href="#">Usage</a></li>
+<li class="nav-link doc-head"><a href="gallery.html">Gallery</a></li>
+<li class="nav-link doc-head"><a href="Development.html">Development</a></li>
+<li class="nav-link doc-head"><a href="about.html">About</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+<div class="docs section">
+<div id="hacketyhackhack"> <!-- style="width:20%;margin-right: 100px;"> --> <!--style="display: none;"> style="display:none;"> -->
+<div class="toc" style="width:15%; margin-right:20px;">
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Development.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">FAQ</a></li>
+</ul>
+</div>
+</div>
+<div class="content"> <!-- style="max-width:80%;margin-left:auto;margin-right: auto;">-->
+<div class="section" id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note 1: this guide currently omits any mention of notebook testing; that is separated out into a separate library: <a href="https://github.com/pyviz/nbsmoke">nbsmoke</a>.</p>
+<p>Note 2: this is a pre-release version of nbsite, so you may subsequently have to change your config on upgrading to a newer version of nbsite. You may also encounter problems and/or limitations - please file issues or ask questions on <a href="https://github.com/pyviz/nbsite/issues">GitHub</a>.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Prerequisites">Prerequisites<a class="anchor-link" href="#Prerequisites">¶</a></h2><ol>
+<li><p>You want a 'static', fairly self contained site (i.e. just an ordinary web server is required - you can build and serve locally, or copy the build directory to a remote server).</p>
+</li>
+<li><p>You have one or more sets of notebooks (e.g. <code>notebooks/</code>, or <code>examples/getting_started</code> + <code>examples/user_guide</code> + <code>examples/gallery</code>). Note: current expectation is for there to be no title in the notebook itself; instead, the title will be taken from filename. E.g. <code>1_The_Filename.ipynb</code> will result in a title of <code>1 The Filename</code>. If there is a title in the notebook, then the <code>offset</code> flag can be used to remove the first cell before rendering. Notebooks should use level 2 headings as their highest heading level (level 1 will used for the title). However, all of this may change - see <a href="https://github.com/pyviz/nbsite/issues/18">issue 18</a>.</p>
+</li>
+<li><p>The packages used by the notebooks are already installed in the environment into which you will install nbsite.</p>
+</li>
+<li><p>(optional, for API docs) Any packages for which you want to generate API docs are also installed (which could be via e.g. <code>pip install -e /path/to/pkg</code>).</p>
+</li>
+<li><p>You are using mac or linux (might work on windows, but currently untested)</p>
+</li>
+<li><p>Currently, you need to have holoviews available in your environment. Other packages (bokeh, matplotlib, plotly) can be used for visualization in addition to holoviews, but if you don't have holoviews in the environment, you will at least need to override <code>nbbuild_ipython_startup</code> in <code>nbbuild.py</code>, setting it to e.g. <code>""</code>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Installation">Installation<a class="anchor-link" href="#Installation">¶</a></h2><p><code>conda install -c pyviz nbsite</code> or <code>pip install nbsite</code> (note: certain operations may require extra dependencies; for now, see setup.py to learn what those are)</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="One-time-setup">One time setup<a class="anchor-link" href="#One-time-setup">¶</a></h2><p>You can skip and/or modify various steps below depending on what you already have. If you do skip this steps you will need to at least create a doc dir with a conf.py in it. See nbsite/templates/basic for an example.</p>
+<ol>
+<li><p>Create a set of basic pages: <code>nbsite init</code> (will not overwrite existing files). Use the <code>--theme</code> option to specify if you want the holoviz setup.</p>
+</li>
+<li><p>Edit conf.py as appropriate for your project.</p>
+</li>
+<li><p>Edit doc/index.rst toctree to match pages in conf.py</p>
+</li>
+<li><p>Commit any pages that you have edited : <code>git commit -m "something" doc/FAQ.rst doc.about.rst doc/conf.py doc/index.rst doc/latest_news.html ...</code> (etc)</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Building-the-site">Building the site<a class="anchor-link" href="#Building-the-site">¶</a></h2><ol>
+<li><p><code>export ORG=yourorg</code>, <code>export PROJECT=yourproject</code> (or just replace as appropriate in commands below)</p>
+</li>
+<li><p><em>(optional, if you want API docs)</em> Generate API docs: <code>nbsite_generate_modules.py ${MODULE} -d ./Reference_Manual -n ${PROJECT} -e tests</code> (assuming you have <code>tests</code> and do not want it to appear in the API docs)</p>
+</li>
+<li><p>Generate rst containers for notebooks (assuming they are in <code>../examples</code>: <code>nbsite generate-rst --org ${ORG} --project ${PROJECT} --examples ../examples</code>)</p>
+</li>
+<li><p><em>(optional, if you want gallery)</em> See <a href="https://nbsite.pyviz.org/gallery">gallery docs</a></p>
+</li>
+<li><p>Make site: <code>nbsite build</code></p>
+</li>
+<li><p>View the result in a browser at localhost:8000: <code>cd builtdocs &amp;&amp; python -m http.server</code></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Re-building/updating-the-site">Re-building/updating the site<a class="anchor-link" href="#Re-building/updating-the-site">¶</a></h2><h3 id="rst-pages">rst pages<a class="anchor-link" href="#rst-pages">¶</a></h3><ul>
+<li>Added, removed, or edited an rst page? Update any toc as necessary (e.g. removing an entry), then re-run step 5 above.</li>
+</ul>
+<h3 id="Notebooks">Notebooks<a class="anchor-link" href="#Notebooks">¶</a></h3><ul>
+<li><p>Removed a notebook? Delete the corresponding rst file.</p>
+</li>
+<li><p>Edited a notebook? Re-run step 4 above. You need to manually remove the evaluated notebook from <code>doc</code> or use <code>--overwrite</code> to have the notebook re-run and turned into html.</p>
+</li>
+<li><p>Added a new notebook? Re-run step 2 then proceed as for 'edited', above.</p>
+</li>
+</ul>
+<h3 id="Reference-manual">Reference manual<a class="anchor-link" href="#Reference-manual">¶</a></h3><ul>
+<li>If you are working on the reference manual, TODO (depends on commit or not).</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Customizing-Style">Customizing Style<a class="anchor-link" href="#Customizing-Style">¶</a></h2><p>For most of the sites that have been generated so far, we used the <code>sphinx_holoviz_theme</code>. <a href="https://pyviz.org">PyViz</a> is the exception and uses the Alabaster theme.</p>
+<h3 id="HoloViz">HoloViz<a class="anchor-link" href="#HoloViz">¶</a></h3><p>To use the holoviz theme: pip/conda install sphinx_holoviz_theme and set <code>html_theme</code> to <code>sphinx_holoviz_theme</code>. To control the look and feel, change <code>html_theme_options</code> in conf.py:</p>
+<ul>
+<li><code>logo</code> and <code>favicon</code>: provide paths relative to <code>html_static_path</code> (<code>doc/_static</code> by default)</li>
+<li><code>primary_color</code>, <code>primary_color_dark</code> and <code>secondary_color</code>: control the colors that the website uses for header, nav, links... These can be css named colors, or hex colors.</li>
+<li><code>second_nav</code>: Boolean indicating whether to use a second nav bar.</li>
+<li><code>custom_css</code>: path relative to <code>html_static_path</code> overriding styles. Styles come first from the theme's <code>main.css_t</code>, which is populated with the colors options, extended/overridden by nbsite's own css <code>nbsite/_shared_static/nbsite.css</code>, and then extended/overridden by your site's own css. </li>
+</ul>
+<p><strong>NOTE:</strong> Only use the custom_css to overwrite small pieces of the css not to make general improvements. If you have general improvements, please open a PR on the <a href="https://github.com/pyviz-dev/sphinx_holoviz_theme">theme repo</a>.</p>
+<h2 id="Customizing-running-of-IPython-notebooks">Customizing running of IPython notebooks<a class="anchor-link" href="#Customizing-running-of-IPython-notebooks">¶</a></h2><p>In conf.py, you can set options to control notebook execution:</p>
+<ul>
+<li><code>nbbuild_cell_timeout</code>: timeout per cell (seconds), e.g. <code>100</code></li>
+<li><code>nbbuild_ipython_startup</code>: code (as string) to execute before running the first cell of each notebook. Defaults to <a href="https://github.com/pyviz/nbsite/blob/master/nbsite/ipystartup.py">nbsite's ipython startup code</a>. E.g. <code>"module.special_swith=False"</code>. </li>
+<li><code>nbbuild_patterns_to_take_along</code>: list of glob patterns to match files that should be copied alongside a notebook. E.g. holoviews is configured to save data in external json files to improve page loading times, so this defaults to <code>["*.json"]</code>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Automatic-deployment-to-github-pages">Automatic deployment to github pages<a class="anchor-link" href="#Automatic-deployment-to-github-pages">¶</a></h2><p>Add something like this to your <code>.travis.yml</code> file (but modify for your own preferences):</p>
+<pre><code>deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: ./_build/html
+  on:
+    branch: master</code></pre>
+<p>See nbsite's <code>.travis.yml</code> for an example.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils"/>
+<p><a class="reference external" href="https://raw.githubusercontent.com/pyviz-dev/nbsite/master/examples/Usage.ipynb">Right click to download this notebook from GitHub.</a></p>
+</div>
+</div>
+</div>
+<!-- END MAIN BODY OF DOCS ––––––––––––– -->
+<footer class="footer">
+<div class="footer-links">
+<ul>
+<li><span class="footer-title">Links</span></li>
+<li><a href="#">Usage</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="Development.html">Development</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+<ul>
+<li><span class="footer-title">Join Us</span></li>
+<li><a href="https://github.com/pyviz-dev/nbsite">Github</a></li>
+<li><a href="https://gitter.im/pyviz/pyviz">Gitter</a></li>
+</ul>
+<ul class="copyright">
+<li>2018-2019 PyViz Developers</li>
+</ul>
+</div>
+</footer>
+<!-- Google Analytics -->
+<!-- MathJax Config -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
